@@ -9,6 +9,7 @@ const outputCard = document.getElementById("output-card");
 const showMessage = document.getElementById("message-show");
 const messageOutput = document.querySelector("#message-show h1");
 
+// If there is a hash in the URL
 if (message) {
 	showMessage.classList.remove("hide");
 	inputCard.classList.add("hide");
@@ -20,11 +21,14 @@ form.addEventListener("submit", (e) => {
 
 	// Encodes the input value to Base64
 	const encrypted = btoa(input.value);
+
 	// Hide Input card and show Output card
 	inputCard.classList.add("hide");
 	outputCard.classList.remove("hide");
+
 	// Link with the encoded hash
 	output.value = `${window.location}#${encrypted}`;
+
 	// Selects the output field to be able to ctrl + c
 	output.select();
 });
